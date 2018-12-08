@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
+## Objective
+Create a simple angular front end that fetches a list of images and text from micro service and refreshed them periodically
+nothing much can be done at this point except to showcase your resume and inventory
+in future, it can be improved to create some edit functions as well
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
