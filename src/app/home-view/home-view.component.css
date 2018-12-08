@@ -10,7 +10,7 @@ p {
     width: 95%;
     height: 65%;
     min-height: 65%;
-    /*background-image: url(../../../assets/bat.jpg);*/
+    /*background-image: url(../../assets/bat.jpg);*/
     background-position: center;
     background-size: cover;
 }

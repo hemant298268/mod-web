@@ -11,14 +11,14 @@
                     <li><a href="#Gallery " style="text-align:right ">Gallery</a></li>
                     <li><a href="#Charges " style="text-align:right ">Charges</a></li>
                     <li><a href="#Service " style="text-align:right ">Service</a></li>
-                    <li><a href="#About " style="text-align:right ">About</a></li>
-                    <li><a href="#Home " style="text-align:right ">Home</a></li>
+                    <li><a href="#About " [routerLink]="['about']" style="text-align:right ">About</a></li>
+                    <li><a href="#Home " [routerLink]="['home']" style="text-align:right ">Home</a></li>
                 </ul>
             </nav>
         </div>
     </div>
     <div class="child_middle_cont">
-        <app-home-view></app-home-view>
+        <router-outlet></router-outlet>
     </div>
     <div class=" child_lower_cont" align="bottom">
         <p align="center">Call us : 9971110940</p>
