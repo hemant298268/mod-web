@@ -5,12 +5,10 @@ import { HomeSvcService } from '../home-svc.service';
 import { map } from 'rxjs/operators';
 import { interval } from 'rxjs';
 
-
-
 @Component({
-  selector: 'app-home-view',
-  templateUrl: './home-view.component.html',
-  styleUrls: ['./home-view.component.css'],
+  selector: 'app-gallery-view',
+  templateUrl: './gallery-view.component.html',
+  styleUrls: ['./gallery-view.component.css'],
   animations: [
     trigger('myTrigger', [
       state('invisible', style({
@@ -23,10 +21,10 @@ import { interval } from 'rxjs';
     ])
   ]
 })
+export class GalleryViewComponent {
 
-export class HomeViewComponent {
   state = 'visible';
-  route = 'home';
+  route = 'gallery';
   txtlist; // stores the list of text files for current route
   txtcounter = 0; // maintains the counter of text displayed
   txtlimit;
@@ -138,5 +136,4 @@ export class HomeViewComponent {
       }
 
     }
-
 }
