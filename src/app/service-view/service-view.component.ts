@@ -32,8 +32,8 @@ export class ServiceViewComponent {
   imglimit;
   bckimg;
   // fiximage = '../../assets/image/home/h1(1).jpg';
-  fiximage = '../../assets/image/home/h1.jpg';
-  image = '../../assets/image/home/h1.jpg'; // default image
+  fiximage = '../../assets/services/home/h2.jpg';
+  image = '../../assets/services/home/h2.jpg'; // default image
   txt1: any;
   filename = 'h1.txt'; // default name forfile content
   t1; t2; t3; t4; t5; t6; t7; t8; t9; t10;

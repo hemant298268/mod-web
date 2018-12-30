@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class HomeSvcService {
   obj;
   result;
-  server = 'http://localhost:8099/';
+  server = 'http://35.211.58.67:8099/';
 
   constructor(private http: HttpClient) { }
 

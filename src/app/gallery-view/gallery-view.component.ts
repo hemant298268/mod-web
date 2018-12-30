@@ -33,8 +33,8 @@ export class GalleryViewComponent {
   imglimit;
   bckimg;
   // fiximage = '../../assets/image/home/h1(1).jpg';
-  fiximage = '../../assets/image/home/h1.jpg';
-  image = '../../assets/image/home/h1.jpg'; // default image
+  fiximage = '../../assets/image/gallery/h3.jpg';
+  image = '../../assets/image/gallery/h3.jpg'; // default image
   txt1: any;
   filename = 'h1.txt'; // default name forfile content
   t1; t2; t3; t4; t5; t6; t7; t8; t9; t10;
