@@ -32,8 +32,8 @@ export class ServiceViewComponent {
   imglimit;
   bckimg;
   // fiximage = '../../assets/image/home/h1(1).jpg';
-  fiximage = '../../assets/services/home/h2.jpg';
-  image = '../../assets/services/home/h2.jpg'; // default image
+  // fiximage = '../../assets/services/home/h2.jpg';
+  image = '../../assets/image/services/h2.jpg'; // default image
   txt1: any;
   filename = 'h1.txt'; // default name forfile content
   t1; t2; t3; t4; t5; t6; t7; t8; t9; t10;
@@ -47,8 +47,8 @@ export class ServiceViewComponent {
     this.imglist = this.getImgList();
     this.timer = setInterval(() => {
       this.state = 'invisible';
-      this.change();
-      this.setImg();
+      this.change('change');
+      this.setImg('change');
     }, 5000);
   }
 
@@ -68,7 +68,8 @@ export class ServiceViewComponent {
       });
     }
 
-    change() {
+    change(mode: string) {
+      if (mode === 'change') {
       if (this.txtcounter < (this.txtlimit - 1)) {
         this.filename = this.txtlist[this.txtcounter];
         this.getText();
@@ -78,6 +79,10 @@ export class ServiceViewComponent {
         this.getText();
         this.txtcounter = 0;
       }
+    } else if (mode === 'init') {
+      this.getText();
+      this.txtcounter++;
+    }
     }
 
     animate_img() {
@@ -88,8 +93,9 @@ export class ServiceViewComponent {
       this.state = 'visible';
     }
 
-    setImg() {
+    setImg(mode: string) {
       this.bckimg = document.getElementById('home_mid_img');
+      if (mode === 'change') {
       if (this.imgcounter < (this.imglimit - 1)) {
         this.image = '../../assets/image/' + this.route + '/' + this.imglist[this.imgcounter];
         this.bckimg.backgroundImage = 'url("' + this.image + '")';
@@ -101,6 +107,11 @@ export class ServiceViewComponent {
         this.imgcounter = 0;
         console.log(this.image);
       }
+    } else if (mode === 'init') {
+      // this.image = '../../assets/image/' + this.route + '/' + this.imglist[this.imgcounter];
+       this.bckimg.backgroundImage = 'url("' + this.image + '")';
+       this.imgcounter++;
+    }
     }
 
     getText() {
@@ -117,6 +128,12 @@ export class ServiceViewComponent {
         this.t9 = value.l9;
         this.t10 = value.l10;
       });
+    }
+
+    // tslint:disable-next-line:use-life-cycle-interface
+    ngOnInit() {
+      this.change('init');
+      this.setImg('init');
     }
 
     // tslint:disable-next-line:use-life-cycle-interface

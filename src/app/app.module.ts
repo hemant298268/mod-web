@@ -34,8 +34,8 @@ import { ContactViewComponent } from './contact-view/contact-view.component';
       {path: 'gallery', component: GalleryViewComponent},
       {path: 'services', component: ServiceViewComponent},
       {path: 'contactus', component: ContactViewComponent},
-      {path: '', redirectTo: '/', pathMatch: 'full'}, // default page to load
-      {path: '**', redirectTo: '/', pathMatch: 'full'} // default page to load when page is not found
+      {path: '', redirectTo: 'home', pathMatch: 'full'}, // default page to load
+      {path: '**', redirectTo: 'home', pathMatch: 'full'} // default page to load when page is not found
     ]),
     BrowserModule,
     HttpModule,

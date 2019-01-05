@@ -27,3 +27,13 @@ p {
     min-height: 100%;
     background: grey;
 }
+
+#previous {
+    float: left;
+    margin-left: 25%;
+}
+
+#next {
+    float: right;
+    margin-right: 25%;
+}

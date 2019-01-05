@@ -1,1 +1,7 @@
-This is a sample text data from file f1
+{
+"l1":"This is home page line 1",
+"l2":"This is home page line 2",
+"l3":"This is home page line 3",
+"l4":"This is home page line 4",
+"l5":"This is home page line 5"
+}

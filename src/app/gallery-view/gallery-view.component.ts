@@ -33,7 +33,7 @@ export class GalleryViewComponent {
   imglimit;
   bckimg;
   // fiximage = '../../assets/image/home/h1(1).jpg';
-  fiximage = '../../assets/image/gallery/h3.jpg';
+  // fiximage = '../../assets/image/gallery/h3.jpg';
   image = '../../assets/image/gallery/h3.jpg'; // default image
   txt1: any;
   filename = 'h1.txt'; // default name forfile content
@@ -48,9 +48,9 @@ export class GalleryViewComponent {
     this.imglist = this.getImgList();
     this.timer = setInterval(() => {
       this.state = 'invisible';
-      this.change();
-      this.setImg();
-    }, 5000);
+      this.change('change');
+      this.setImg('change');
+    }, 150000);
   }
 
     getTextList() {
@@ -69,7 +69,8 @@ export class GalleryViewComponent {
       });
     }
 
-    change() {
+    change(mode: string) {
+      if (mode === 'change') {
       if (this.txtcounter < (this.txtlimit - 1)) {
         this.filename = this.txtlist[this.txtcounter];
         this.getText();
@@ -79,6 +80,9 @@ export class GalleryViewComponent {
         this.getText();
         this.txtcounter = 0;
       }
+    } else if (mode === 'init') {
+      this.getText();
+    }
     }
 
     animate_img() {
@@ -89,8 +93,9 @@ export class GalleryViewComponent {
       this.state = 'visible';
     }
 
-    setImg() {
+    setImg(mode: string) {
       this.bckimg = document.getElementById('home_mid_img');
+      if (mode === 'change') {
       if (this.imgcounter < (this.imglimit - 1)) {
         this.image = '../../assets/image/' + this.route + '/' + this.imglist[this.imgcounter];
         this.bckimg.backgroundImage = 'url("' + this.image + '")';
@@ -102,6 +107,10 @@ export class GalleryViewComponent {
         this.imgcounter = 0;
         console.log(this.image);
       }
+    } else if (mode === 'init') {
+      // this.image = '../../assets/image/' + this.route + '/' + this.imglist[this.imgcounter];
+      this.bckimg.backgroundImage = 'url("' + this.image + '")';
+    }
     }
 
     getText() {
@@ -118,6 +127,70 @@ export class GalleryViewComponent {
         this.t9 = value.l9;
         this.t10 = value.l10;
       });
+    }
+
+    previous() {
+      this.state = 'invisible';
+      console.log('previous button clicked');
+      if (this.txtcounter === 0) {
+        this.txtcounter = this.txtlimit;
+      }
+      if (this.txtcounter < 0) {
+        this.txtcounter = this.txtlimit;
+      } else {
+        this.txtcounter--;
+      }
+
+      if (this.imgcounter === 0) {
+        this.imgcounter = this.imglimit;
+      }
+      if (this.imgcounter < 0) {
+        this.imgcounter = this.imglimit;
+      } else {
+        this.imgcounter--;
+      }
+
+      // change text
+      console.log('txtlimit' + this.txtlimit);
+      console.log('txtcounter' + this.txtcounter);
+      console.log('filename' + this.txtlist[this.txtcounter]);
+      this.filename = this.txtlist[this.txtcounter];
+      this.getText();
+
+      // change image
+      this.image = '../../assets/image/' + this.route + '/' + this.imglist[this.imgcounter];
+    }
+
+    next() {
+      this.state = 'invisible';
+      console.log('next button clicked');
+      if (this.txtcounter < (this.txtlimit - 1)) {
+        this.txtcounter++;
+      } else {
+        this.txtcounter = 0;
+      }
+
+      if (this.imgcounter < (this.imglimit - 1)) {
+        this.imgcounter++;
+      } else {
+        this.imgcounter = 0;
+      }
+
+      // change text
+      console.log('txtlimit' + this.txtlimit);
+      console.log('txtcounter' + this.txtcounter);
+      console.log('filename' + this.txtlist[this.txtcounter]);
+      this.filename = this.txtlist[this.txtcounter];
+      this.getText();
+
+      // change image
+      this.image = '../../assets/image/' + this.route + '/' + this.imglist[this.imgcounter];
+    }
+
+    // tslint:disable-next-line:use-life-cycle-interface
+    ngOnInit() {
+      this.change('init');
+      this.setImg('init');
     }
 
     // tslint:disable-next-line:use-life-cycle-interface

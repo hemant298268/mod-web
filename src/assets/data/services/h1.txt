@@ -1,1 +1,4 @@
-This is a sample text data from file f1
+{
+"l1":"This is services page 2 line 1",
+"l2":"This is services page 2 line 2"
+}

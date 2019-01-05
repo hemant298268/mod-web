@@ -34,7 +34,7 @@ export class ContactViewComponent {
   bckimg;
   // fiximage = '../../assets/image/home/h1(1).jpg';
   fiximage = '../../assets/image/home/h1.jpg';
-  image = '../../assets/image/home/h1.jpg'; // default image
+  image = '../../assets/image/contact/h1.jpg'; // default image
   txt1: any;
   filename = 'h1.txt'; // default name forfile content
   t1; t2; t3; t4; t5; t6; t7; t8; t9; t10;
@@ -48,8 +48,8 @@ export class ContactViewComponent {
     this.imglist = this.getImgList();
     this.timer = setInterval(() => {
       this.state = 'invisible';
-      this.change();
-      this.setImg();
+      this.change('change');
+      this.setImg('change');
     }, 5000);
   }
 
@@ -69,7 +69,8 @@ export class ContactViewComponent {
       });
     }
 
-    change() {
+    change(mode: string) {
+      if (mode === 'change') {
       if (this.txtcounter < (this.txtlimit - 1)) {
         this.filename = this.txtlist[this.txtcounter];
         this.getText();
@@ -79,6 +80,10 @@ export class ContactViewComponent {
         this.getText();
         this.txtcounter = 0;
       }
+    } else if (mode === 'init') {
+      this.getText();
+      this.txtcounter++;
+    }
     }
 
     animate_img() {
@@ -89,8 +94,9 @@ export class ContactViewComponent {
       this.state = 'visible';
     }
 
-    setImg() {
+    setImg(mode: string) {
       this.bckimg = document.getElementById('home_mid_img');
+      if (mode === 'change') {
       if (this.imgcounter < (this.imglimit - 1)) {
         this.image = '../../assets/image/' + this.route + '/' + this.imglist[this.imgcounter];
         this.bckimg.backgroundImage = 'url("' + this.image + '")';
@@ -102,6 +108,11 @@ export class ContactViewComponent {
         this.imgcounter = 0;
         console.log(this.image);
       }
+    } else if (mode === 'init') {
+      // this.image = '../../assets/image/' + this.route + '/' + this.imglist[this.imgcounter];
+      this.bckimg.backgroundImage = 'url("' + this.image + '")';
+      this.imgcounter++;
+    }
     }
 
     getText() {
@@ -120,7 +131,14 @@ export class ContactViewComponent {
       });
     }
 
+
     // tslint:disable-next-line:use-life-cycle-interface
+    ngOnInit() {
+        this.change('init');
+        this.setImg('init');
+      }
+
+      // tslint:disable-next-line:use-life-cycle-interface
     ngOnDestroy() {
       if (this.objtext != null) {
         this.objtext.unsubscribe();
