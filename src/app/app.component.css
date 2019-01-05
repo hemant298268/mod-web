@@ -6,7 +6,6 @@
 .child_upp_cont {
     display: inline-block;
     width: 100%;
-    height: 30%;
     background-image: url(../assets/gow.jpg);
     background-position: left;
     background-size: cover;
@@ -36,9 +35,9 @@
 .child_middle_cont {
     display: inline-block;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: -10%;
     width: 95%;
-    height: 65vh;
+    height: 75vh;
     background-position: center;
     background-size: cover;
 }
@@ -57,8 +56,9 @@
 }
 
 .child_lower_cont {
+    position: relative;
+    bottom: 0;
     right: 0;
-    bottom: 5px;
     left: 0;
     max-width: 95%;
 }
@@ -88,7 +88,7 @@ li a:hover {
 }
 
 .active {
-    background-color: yellow;
+    background-color: rgba(174, 183, 201, 0.637);
 }
 
 p {

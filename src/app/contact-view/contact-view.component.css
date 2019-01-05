@@ -13,6 +13,7 @@ p {
     /*background-image: url(../../assets/bat.jpg);*/
     background-position: center;
     background-size: cover;
+    overflow: auto;
 }
 
 .child_middle_left {
@@ -25,5 +26,6 @@ p {
     float: right;
     width: 55%;
     min-height: 100%;
-    background: grey;
+    background: rgba(128, 128, 128, 0.4);
+    overflow: auto;
 }

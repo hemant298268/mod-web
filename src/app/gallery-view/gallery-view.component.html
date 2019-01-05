@@ -1,19 +1,21 @@
-<div class="child_middle_cont" id="home_mid_img" [@myTrigger]='state' (@myTrigger.done)="set_visible($event)" [ngStyle]="{'background-image':'url(' + image + ')'}">
-    <div class=child_middle_left align="left">
+<div id="middle_main">
+    <button id="previous" (click)='previous()'><i class="fas fa-angle-double-left" style='font-size:48px;color:red'></i></button>
+    <div class="child_middle_cont">
+        <div class=child_middle_left id="home_mid_img" align="left" [@myTrigger]='state' (@myTrigger.done)="set_visible($event)" [ngStyle]="{'background-image':'url(' + image + ')'}">
 
+        </div>
+        <div class=child_middle_right align="right">
+            <p>{{t1}}</p>
+            <p>{{t2}}</p>
+            <p>{{t3}}</p>
+            <p>{{t4}}</p>
+            <p>{{t5}}</p>
+            <p>{{t6}}</p>
+            <p>{{t7}}</p>
+            <p>{{t8}}</p>
+            <p>{{t9}}</p>
+            <p>{{t10}}</p>
+        </div>
     </div>
-    <div class=child_middle_right align="right">
-        <p>{{t1}}</p>
-        <p>{{t2}}</p>
-        <p>{{t3}}</p>
-        <p>{{t4}}</p>
-        <p>{{t5}}</p>
-        <p>{{t6}}</p>
-        <p>{{t7}}</p>
-        <p>{{t8}}</p>
-        <p>{{t9}}</p>
-        <p>{{t10}}</p>
-    </div>
-    <button id="previous" (click)='previous()'>prev</button>
-    <button id="next" (click)='next()'>next</button>
+    <button id="next" (click)='next()'><i class="fas fa-angle-double-right" style='font-size:48px;color:red'></i></button>
 </div>
