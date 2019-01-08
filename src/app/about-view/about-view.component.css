@@ -1,6 +1,10 @@
 p {
-    text-align: center;
+    text-align: left;
     color: chartreuse;
+}
+
+h1 {
+    text-align: center;
 }
 
 .child_middle_cont {

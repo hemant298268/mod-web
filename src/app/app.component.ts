@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mod-web';
+  title = 'Hemant298268';
 
   myFunction() {
     const x = document.getElementById('myTopnav');
@@ -16,4 +16,11 @@ export class AppComponent {
         x.className = 'topnav';
       }
     }
+
+  close() {
+    const x = document.getElementById('myTopnav');
+     if (x.className === 'topnav responsive') {
+      x.className = 'topnav';
+      }
+  }
 }

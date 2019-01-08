@@ -2,8 +2,11 @@ import { Component, OnDestroy} from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { HomeSvcService } from '../home-svc.service';
+import { SeoServiceService } from '../seo-service.service';
+import { Router, NavigationEnd } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { interval } from 'rxjs';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about-view',
@@ -23,8 +26,11 @@ import { interval } from 'rxjs';
 })
 export class AboutViewComponent {
 
+  title = 'About Us';
+  router:  Router;
   state = 'visible';
   route = 'about';
+  pagetitle = 'About Us';
   txtlist; // stores the list of text files for current route
   txtcounter = 0; // maintains the counter of text displayed
   txtlimit;
@@ -43,7 +49,9 @@ export class AboutViewComponent {
   objimglist;
   objtext;
 // [ngStyle]="{'background-image':'url(' + image + ')'}"
-  constructor(private homeSvc: HomeSvcService) {
+  constructor(private homeSvc: HomeSvcService, private meta: Meta, private tit: Title) {
+    tit.setTitle(this.title);
+    meta.addTag({ name: 'keywords', content: 'test sample'});
     this.txtlist = this.getTextList();
     this.imglist = this.getImgList();
     this.timer = setInterval(() => {
@@ -135,6 +143,15 @@ export class AboutViewComponent {
      ngOnInit() {
         this.change('init');
         this.setImg('init');
+        // this.seoServ.updateTitle('Demo Title');
+        // seoService.updateDescription('Test Keywords, hemant rocks');
+        /* this.router.events.subscribe((event) => {
+          if (event instanceof NavigationEnd) {
+            console.log('about tab selected');
+            this.seoServ.updateTitle('Demo Title');
+            this.seoServ.updateDescription('Test Keywords, hemant rocks');
+          }
+        }); */
       }
 
     // tslint:disable-next-line:use-life-cycle-interface

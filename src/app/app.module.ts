@@ -29,12 +29,15 @@ import { ContactViewComponent } from './contact-view/contact-view.component';
   imports: [
     RouterModule.forRoot([
       {path: 'home', component: HomeViewComponent},
-      {path: 'about', component: AboutViewComponent}, // add new route before '' and not after
+      {path: 'about', component: AboutViewComponent, data: {
+        title: 'About',
+        keywords: 'this is one, this is another'
+      }}, // add new route before '' and not after
       {path: 'charges', component: ChargesViewComponent},
       {path: 'gallery', component: GalleryViewComponent},
       {path: 'services', component: ServiceViewComponent},
       {path: 'contactus', component: ContactViewComponent},
-      {path: '', redirectTo: 'home', pathMatch: 'full'}, // default page to load
+      {path: '', redirectTo: '/', pathMatch: 'full'}, // default page to load
       {path: '**', redirectTo: 'home', pathMatch: 'full'} // default page to load when page is not found
     ]),
     BrowserModule,

@@ -1,8 +1,13 @@
+<head>
+    <meta name="description" content="About page for Hemant298268">
+    <meta name="keywords" content="About page, my about page">
+</head>
 <div class="child_middle_cont" id="home_mid_img" [@myTrigger]='state' (@myTrigger.done)="set_visible($event)" [ngStyle]="{'background-image':'url(' + image + ')'}">
     <div class=child_middle_left align="left">
 
     </div>
     <div class=child_middle_right align="right">
+        <h1>{{pagetitle}}</h1>
         <p>{{t1}}</p>
         <p>{{t2}}</p>
         <p>{{t3}}</p>

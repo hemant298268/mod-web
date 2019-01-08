@@ -1,5 +1,6 @@
 <div id="middle_main">
-    <button id="previous" (click)='previous()'><i class="fas fa-angle-double-left" style='font-size:48px;color:red'></i></button>
+    <button id="previous" (click)='previous()'><i class="fas fa-angle-double-left" style='font-size:25px;color:red'></i></button>
+    <button id="next" (click)='next()'><i class="fas fa-angle-double-right" style='font-size:25px;color:red'></i></button>
     <div class="child_middle_cont">
         <div class=child_middle_left id="home_mid_img" align="left" [@myTrigger]='state' (@myTrigger.done)="set_visible($event)" [ngStyle]="{'background-image':'url(' + image + ')'}">
 
@@ -17,5 +18,5 @@
             <p>{{t10}}</p>
         </div>
     </div>
-    <button id="next" (click)='next()'><i class="fas fa-angle-double-right" style='font-size:48px;color:red'></i></button>
+
 </div>

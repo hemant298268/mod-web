@@ -1,33 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
-<div style="text-align:center">
-
+<link href="https://fonts.googleapis.com/css?family=Kalam|Pacifico" rel="stylesheet">
+<div class="main_container" style="text-align:center">
     <div class="child_upp_cont">
-        <h1 align="left" style="color:rgba(0,0,0,0); font-family: 'Playfair Display', serif;">Welcome to Amazon</h1>
+        <h1 style="color:rgba(0,0,0,0); font-family: 'Playfair Display', serif;">Welcome to website</h1>
         <div class="child_upp_left"></div>
         <div class=child_upp_right>
             <div class="topnav" id="myTopnav">
-                <a href="#Home " [routerLink]="['home']" style="text-align:left ">Home</a>
-                <a href="#About " [routerLink]="['about']" style="text-align:left ">About</a>
-                <a href="#Service " [routerLink]="['services']" style="text-align:left ">Services</a>
-                <a href="#Charges " [routerLink]="['charges']" style="text-align:left ">Charges</a>
-                <a href="#Gallery " [routerLink]="['gallery']" style="text-align:left ">Gallery</a>
-                <a href="#Contactus " [routerLink]="['contactus']" style="text-align:left ">Contact Us</a>
-                <a href="javascript:void(0);" class="icon" (click)="myFunction()">
-                    <i class="fa fa-bars"></i>
-                </a>
+                <a href="#Home " (click)="myFunction()" [routerLink]="['home']" style="text-align:left ">Home</a>
+                <a href="#About " (click)="myFunction()" [routerLink]="['about']" style="text-align:left ">About</a>
+                <a href="#Service " (click)="myFunction()" [routerLink]="['services']" style="text-align:left ">Services</a>
+                <a href="#Charges " (click)="myFunction()" [routerLink]="['charges']" style="text-align:left ">Charges</a>
+                <a href="#Gallery " (click)="myFunction()" [routerLink]="['gallery']" style="text-align:left ">Gallery</a>
+                <a href="#Contactus " (click)="myFunction()" [routerLink]="['contactus']" style="text-align:left ">Contact Us</a>
+                <a href="javascript:void(0);" class="icon" (click)="myFunction()"><i class="fa fa-bars"></i></a>
             </div>
-            <!-- <nav id="desk_menu" align="right ">
-                <ul>
-                    <li><a href="#Contactus " [routerLink]="['contactus']" style="text-align:right ">Contact Us</a></li>
-                    <li><a href="#Gallery " [routerLink]="['gallery']" style="text-align:right ">Gallery</a></li>
-                    <li><a href="#Charges " [routerLink]="['charges']" style="text-align:right ">Charges</a></li>
-                    <li><a href="#Service " [routerLink]="['services']" style="text-align:right ">Services</a></li>
-                    <li><a href="#About " [routerLink]="['about']" style="text-align:right ">About</a></li>
-                    <li><a href="#Home " [routerLink]="['home']" style="text-align:right ">Home</a></li>
-                </ul>
-            </nav> -->
         </div>
     </div>
     <div class="child_middle_cont">

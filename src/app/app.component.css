@@ -1,6 +1,14 @@
 .css-selector {
     font-family: 'Playfair Display', serif;
     font-family: 'Roboto Mono', monospace;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Kalam', cursive;
+}
+
+.main_container {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .child_upp_cont {
@@ -34,10 +42,11 @@
 
 .child_middle_cont {
     display: inline-block;
-    margin-top: 15px;
-    margin-bottom: -10%;
+    padding-top: 0.05%;
     width: 95%;
-    height: 75vh;
+    bottom: 0px;
+    height: 95vh;
+    max-width: 100%;
     background-position: center;
     background-size: cover;
 }
@@ -45,22 +54,24 @@
 .child_middle_left {
     float: left;
     width: 45%;
-    height: 100%;
+    height: inherit;
 }
 
 .child_middle_right {
     float: right;
     width: 55%;
-    min-height: 100%;
+    min-height: inherit;
     background: grey;
 }
 
 .child_lower_cont {
-    position: relative;
+    position: fixed;
+    display: inline-block;
+    background-color: darkorange;
     bottom: 0;
     right: 0;
     left: 0;
-    max-width: 95%;
+    width: 100%;
 }
 
 ul {
@@ -80,7 +91,11 @@ li a {
     text-align: center;
     padding: 16px 16px;
     text-decoration: darkorange;
-    font-family: 'Roboto Mono', monospace;
+}
+
+a {
+    font-family: 'Pacifico', cursive;
+    text-shadow: 5px;
 }
 
 li a:hover {
@@ -111,7 +126,7 @@ p {
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 15px 15px;
     text-decoration: none;
     font-size: 17px;
 }

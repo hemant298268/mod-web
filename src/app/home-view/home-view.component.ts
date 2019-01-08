@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { HomeSvcService } from '../home-svc.service';
 import { map } from 'rxjs/operators';
 import { interval } from 'rxjs';
-
+import { Meta, Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -25,6 +25,7 @@ import { interval } from 'rxjs';
 })
 
 export class HomeViewComponent {
+  title = 'Home';
   state = 'visible';
   route = 'home';
   txtlist; // stores the list of text files for current route
@@ -45,7 +46,8 @@ export class HomeViewComponent {
   objimglist;
   objtext;
 // [ngStyle]="{'background-image':'url(' + image + ')'}"
-  constructor(private homeSvc: HomeSvcService) {
+  constructor(private homeSvc: HomeSvcService, private tit: Title) {
+    tit.setTitle(this.title);
     this.txtlist = this.getTextList();
     this.imglist = this.getImgList();
     this.timer = setInterval(() => {
