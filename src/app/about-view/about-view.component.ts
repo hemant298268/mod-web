@@ -25,7 +25,6 @@ import { Meta, Title } from '@angular/platform-browser';
   ]
 })
 export class AboutViewComponent {
-
   title = 'About Us';
   router:  Router;
   state = 'visible';
@@ -48,10 +47,13 @@ export class AboutViewComponent {
   objtxtlist;
   objimglist;
   objtext;
+  keywords = 'about keyword, about keywords';
+  description = 'about page description';
 // [ngStyle]="{'background-image':'url(' + image + ')'}"
   constructor(private homeSvc: HomeSvcService, private meta: Meta, private tit: Title) {
     tit.setTitle(this.title);
-    meta.addTag({ name: 'keywords', content: 'test sample'});
+    meta.updateTag({name: 'keywords', content: this.keywords});
+    meta.updateTag({name: 'description', content: this.description});
     this.txtlist = this.getTextList();
     this.imglist = this.getImgList();
     this.timer = setInterval(() => {

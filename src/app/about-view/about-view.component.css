@@ -1,6 +1,7 @@
 p {
-    text-align: left;
-    color: chartreuse;
+    text-align: center;
+    color: rgb(5, 3, 32);
+    font-family: 'Kalam', cursive;
 }
 
 h1 {

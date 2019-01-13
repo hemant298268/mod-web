@@ -1,6 +1,7 @@
 p {
     text-align: center;
-    color: chartreuse;
+    color: rgb(5, 3, 32);
+    font-family: 'Kalam', cursive;
 }
 
 .child_middle_cont {

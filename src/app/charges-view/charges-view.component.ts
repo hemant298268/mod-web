@@ -44,9 +44,13 @@ export class ChargesViewComponent {
   objtxtlist;
   objimglist;
   objtext;
+  keywords = 'about keyword, about keywords';
+  description = 'about page description';
 // [ngStyle]="{'background-image':'url(' + image + ')'}"
-  constructor(private homeSvc: HomeSvcService, private tit: Title) {
+  constructor(private homeSvc: HomeSvcService, private tit: Title, private meta: Meta) {
     tit.setTitle(this.title);
+    meta.updateTag({name: 'keywords', content: this.keywords});
+    meta.updateTag({name: 'description', content: this.description});
     this.txtlist = this.getTextList();
     this.imglist = this.getImgList();
     this.timer = setInterval(() => {

@@ -1,13 +1,19 @@
 <head>
-    <meta name="description" content="About page for Hemant298268">
-    <meta name="keywords" content="About page, my about page">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900i|Roboto+Mono" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="author" content="Hemant Singh">
+    <meta name="description" content="Home page for Hemant298268">
+    <meta name="keywords" content="Home page, my home page">
+    <title>Hemant298268</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <div class="child_middle_cont" id="home_mid_img" [@myTrigger]='state' (@myTrigger.done)="set_visible($event)" [ngStyle]="{'background-image':'url(' + image + ')'}">
     <div class=child_middle_left align="left">
 
     </div>
     <div class=child_middle_right align="right">
-        <h1>{{pagetitle}}</h1>
         <p>{{t1}}</p>
         <p>{{t2}}</p>
         <p>{{t3}}</p>

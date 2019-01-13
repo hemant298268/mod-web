@@ -1,82 +1,83 @@
-    p {
-        text-align: center;
-        color: chartreuse;
-    }
-    
-    #middle_main {
-        display: inline;
-    }
-    
+p {
+    text-align: center;
+    color: rgb(5, 3, 32);
+    font-family: 'Kalam', cursive;
+}
+
+#middle_main {
+    display: inline;
+}
+
+.child_middle_cont {
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: -10%;
+    width: 85%;
+    height: 65%;
+    min-height: 65%;
+    /*background-image: url(../../assets/bat.jpg);*/
+    background-position: center;
+    background-size: cover;
+    overflow: auto;
+}
+
+button {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.child_middle_left {
+    float: left;
+    width: 45%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    overflow: auto;
+}
+
+.child_middle_right {
+    float: right;
+    width: 55%;
+    HEIGHT: 100%;
+    background: rgba(133, 141, 123, 0.6);
+    overflow: auto;
+}
+
+#previous {
+    left: 0px;
+    float: left;
+    margin-bottom: -2%;
+}
+
+#next {
+    right: 0px;
+    float: right;
+    margin-bottom: -2%;
+}
+
+@media screen and (max-width: 600px) {
     .child_middle_cont {
         display: inline-block;
-        margin-top: 15px;
-        margin-bottom: -10%;
+        margin-top: 5px;
+        margin-bottom: 5px;
         width: 85%;
-        height: 65%;
-        min-height: 65%;
+        height: 80%;
         /*background-image: url(../../assets/bat.jpg);*/
         background-position: center;
         background-size: cover;
-        overflow: auto;
     }
-    
-    button {
-        background-color: Transparent;
-        background-repeat: no-repeat;
-        border: none;
-        cursor: pointer;
-        overflow: hidden;
-        outline: none;
-    }
-    
     .child_middle_left {
-        float: left;
-        width: 45%;
-        height: 100%;
-        background-position: center;
-        background-size: cover;
-        overflow: auto;
+        float: top;
+        width: 100%;
+        height: 55%;
     }
-    
     .child_middle_right {
-        float: right;
-        width: 55%;
-        HEIGHT: 100%;
-        background: grey;
-        overflow: auto;
+        float: bottom;
+        width: 100%;
+        height: 25vh;
     }
-    
-    #previous {
-        left: 0px;
-        float: left;
-        margin-bottom: -2%;
-    }
-    
-    #next {
-        right: 0px;
-        float: right;
-        margin-bottom: -2%;
-    }
-    
-    @media screen and (max-width: 600px) {
-        .child_middle_cont {
-            display: inline-block;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            width: 85%;
-            height: 80%;
-            /*background-image: url(../../assets/bat.jpg);*/
-            background-position: center;
-            background-size: cover;
-        }
-        .child_middle_left {
-            float: top;
-            width: 100%;
-            height: 55%;
-        }
-        .child_middle_right {
-            float: bottom;
-            width: 100%;
-            height: 25vh;
-        }
-    }
+}
